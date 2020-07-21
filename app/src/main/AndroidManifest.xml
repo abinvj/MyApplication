@@ -11,14 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity5"></activity>
-        <activity android:name=".MainActivity4" />
-        <activity android:name=".MainActivity3" />
+        <activity android:name=".UserReceipt"></activity>
+        <activity android:name=".FamilyView" />
+        <activity android:name=".UserDetails" />
+        <activity android:name=".AboutUsDemo" />
         <activity
-            android:name=".ScrollingActivity"
+            android:name=".VicarsDeskDemo"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity2" />
+        <activity android:name=".GmailWithPreWrittenMessage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

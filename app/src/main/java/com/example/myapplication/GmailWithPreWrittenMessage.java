@@ -3,17 +3,12 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity2 extends AppCompatActivity {
+public class GmailWithPreWrittenMessage extends AppCompatActivity {
 
     Button Send;
     String message;
@@ -21,7 +16,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_gmail_with_pre_written_message);
 
         Send = (Button) findViewById(R.id.bt_send);
         //send button listener
