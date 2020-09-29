@@ -95,6 +95,7 @@
     <string name="title_activity_scrolling3">ScrollingActivity</string>
     <string name="my_preference">"com.abc.com.MyPref"</string>
     <string name="my_preference_key">"com.abc.com.MyPrefKey"</string>
+    <string name="demo">demo</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

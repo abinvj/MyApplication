@@ -1,10 +1,8 @@
 package com.example.myapplication;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -122,7 +120,7 @@ public class WelcomeActivity extends AppCompatActivity implements View .OnClickL
     }
     private void loadHome()
     {
-        startActivity(new Intent(this,LoginActivity.class));
+        startActivity(new Intent(this,MainActivity.class));
         finish();
     }
     private void loadNextSlide()

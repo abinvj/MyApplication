@@ -15,6 +15,6 @@
             android:layout_height="30dp"
             android:layout_width="30dp"
             android:gravity="bottom"
-            android:src="@drawable/man_circle"/>
+            android:src="@drawable/mancircle"/>
     </item>
 </layer-list>

@@ -16,15 +16,23 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:background="@drawable/gradient"
-            android:orientation="vertical">
-
+            android:orientation="vertical"
+            android:gravity="center">
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="45dp"
                 android:src="@drawable/mancircle" />
+
+            <!-- <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/img_profile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/vicar"
+                app:civ_border_color="@android:color/white"
+                app:civ_border_width="2dp" /> -->
 
         </LinearLayout>
 
