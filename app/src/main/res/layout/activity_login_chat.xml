@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/images"
-    tools:context=".SignInActivity">
+    android:background="@drawable/bgsigning"
+    tools:context=".LoginChatActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
@@ -24,36 +24,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sign in to connect with us"
+            android:paddingBottom="30dp"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
-        <EditText
-            android:id="@+id/email"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_ed_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/prompt_email"
+            android:backgroundTint="@color/material_on_background_emphasis_medium"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:inputType="textEmailAddress"
-            android:selectAllOnFocus="true" />
+            android:selectAllOnFocus="true"/>
 
-        <EditText
-            android:id="@+id/password"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_ed_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/prompt_password"
+            android:backgroundTint="@color/material_on_background_emphasis_medium"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:imeActionLabel="@string/action_sign_in_short"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
-            android:selectAllOnFocus="true" />
+            android:selectAllOnFocus="false" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onLogin"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:onClick="LoginUser"
             android:layout_margin="5dp"
-            android:id="@+id/login"
             app:cardCornerRadius="12dp"
             app:cardElevation="6dp"
             android:padding="30dp">
@@ -67,13 +73,27 @@
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/registration"
-            android:onClick="redirectToRegistration"
+            android:onClick="gotoRegistration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="10dp"
             android:text="Not a member yet? Sign Up here"
-            android:textColor="@color/white"
+            android:textColor="@color/colorAccent"
             android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/mainProgressbar"
+                android:progress="0"
+                android:visibility="gone"/>
+        </LinearLayout>
+
     </LinearLayout>
+
 </RelativeLayout>

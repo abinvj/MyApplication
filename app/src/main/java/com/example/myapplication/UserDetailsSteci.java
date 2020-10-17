@@ -10,11 +10,11 @@ import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.widget.ImageView;
-public class UserDetails extends AppCompatActivity {
+public class UserDetailsSteci extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_details);
+        setContentView(R.layout.activity_user_details_steci);
 
         ImageView mimageView=(ImageView) findViewById(R.id.imageView);
         Bitmap mbitmap=((BitmapDrawable) getResources().getDrawable(R.drawable.wall)).getBitmap();

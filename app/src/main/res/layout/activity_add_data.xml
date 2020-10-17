@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/corona_bg"
+    android:background="@drawable/quote"
     tools:context=".AddData">
 
         <LinearLayout
@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="10dp"
+                android:layout_marginRight="10dp"
                 android:gravity="right">
                 <ImageView
                     android:layout_width="50dp"
@@ -74,48 +74,66 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="30dp"
                 android:orientation="vertical">
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:text="COVID - 19"
-                    android:textSize="25sp" />
-                <TextView
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_gravity="left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/quote_left"/>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="20dp"
+                    android:padding="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:id="@+id/showQuote" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:text="cases reported today"
-                    android:textSize="25sp" />
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:id="@+id/showQuoteVerse" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/quote_right"/>
+
+                </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="World - "
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:id="@+id/showWorldData" />
-            </LinearLayout>
 
-            <LinearLayout
+            <!-- <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
@@ -126,12 +144,12 @@
                     android:layout_height="wrap_content"
                     android:text="India - "
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="25sp"
                     android:id="@+id/showIndiasData" />
             </LinearLayout>
 
@@ -146,11 +164,11 @@
                     android:layout_height="wrap_content"
                     android:text="Kerala - "
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="25sp"
                     android:textColor="@color/white"
                     android:id="@+id/showKeralasData" />
             </LinearLayout>
@@ -166,32 +184,13 @@
                     android:layout_height="wrap_content"
                     android:text="Maharashtra - "
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="25sp"
                     android:textColor="@color/white"
                     android:id="@+id/showMaharashtraData" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="100dp"
-                android:orientation="vertical"
-                android:layout_gravity="bottom">
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_cancel_24"
-                    android:onClick="openSignInActivity"
-                    android:background="@null"
-                    android:textSize="25sp"
-                    android:id="@+id/next" />
-            </LinearLayout>
-
+            </LinearLayout> -->
         </LinearLayout>
-
-
 </ScrollView>

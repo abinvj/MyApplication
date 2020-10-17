@@ -42,7 +42,7 @@ public class Stecibapp extends AppCompatActivity {
         startActivity(intent);
     }
     public void openUserDetails(View view){
-        Intent intent=new Intent(this,UserDetails.class);
+        Intent intent=new Intent(this, UserDetailsSteci.class);
         startActivity(intent);
     }
     public void openFamilyView(View view){

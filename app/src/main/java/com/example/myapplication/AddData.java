@@ -6,6 +6,7 @@ import androidx.constraintlayout.solver.widgets.Snapshot;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -28,10 +29,10 @@ public class AddData extends AppCompatActivity {
     EditText keralasData;
     EditText maharashtrasData;
     Button addData;
-    TextView showWorldData;
-    TextView showIndiasData;
-    TextView showKeralasData;
-    TextView showMaharashtrasData;
+    TextView showQuote;
+    TextView showQuoteVerse;
+    //TextView showKeralasData;
+    //TextView showMaharashtrasData;
     ListView listView;
 
     @Override
@@ -39,28 +40,36 @@ public class AddData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_data);
 
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int width = dm.widthPixels;
+        int height = dm.heightPixels;
+
+        getWindow().setLayout((int)(width* .90),(int)(height* .900));
+
         worldsData = findViewById(R.id.dataWorld);
         indiasData= findViewById(R.id.dataIndia);
         keralasData = findViewById(R.id.dataKerala);
         maharashtrasData = findViewById(R.id.dataMaharashtra);
         addData = findViewById(R.id.addData);
-        showWorldData = findViewById(R.id. showWorldData);
-        showIndiasData = findViewById(R.id.showIndiasData);
-        showKeralasData = findViewById(R.id. showKeralasData);
-        showMaharashtrasData = findViewById(R.id.showMaharashtraData);
+        showQuote = findViewById(R.id.showQuote);
+        showQuoteVerse = findViewById(R.id.showQuoteVerse);
+        //showIndiasData = findViewById(R.id.showIndiasData);
+        //showKeralasData = findViewById(R.id. showKeralasData);
+        //showMaharashtrasData = findViewById(R.id.showMaharashtraData);
         listView = findViewById(R.id.listView);
 
         addData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String txt_worldData = worldsData.getText().toString();
-                FirebaseDatabase.getInstance().getReference().child("World").child("Name").setValue(txt_worldData);
+                FirebaseDatabase.getInstance().getReference().child("Quote").child("Name").setValue(txt_worldData);
                 String txt_indiaData = indiasData.getText().toString();
-                FirebaseDatabase.getInstance().getReference().child("India").child("Name").setValue(txt_indiaData);
-                String txt_keralaData = keralasData.getText().toString();
+                FirebaseDatabase.getInstance().getReference().child("QuoteVerse").child("Name").setValue(txt_indiaData);
+                /*String txt_keralaData = keralasData.getText().toString();
                 FirebaseDatabase.getInstance().getReference().child("Kerala").child("Name").setValue(txt_keralaData);
                 String txt_mahaData = maharashtrasData.getText().toString();
-                FirebaseDatabase.getInstance().getReference().child("Maharashtra").child("Name").setValue(txt_mahaData);
+                FirebaseDatabase.getInstance().getReference().child("Maharashtra").child("Name").setValue(txt_mahaData);*/
             }
         });
 
@@ -68,12 +77,12 @@ public class AddData extends AppCompatActivity {
         final ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.list_item, list);
         listView.setAdapter(adapter);
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("World");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Quote");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    showWorldData.setText(snapshot.getValue().toString());
+                    showQuote.setText(snapshot.getValue().toString());
                     list.add(snapshot.getValue().toString());
 
                 }
@@ -86,12 +95,12 @@ public class AddData extends AppCompatActivity {
             }
         });
 
-        DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference().child("India");
+        DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference().child("QuoteVerse");
         reference1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    showIndiasData.setText(snapshot.getValue().toString());
+                    showQuoteVerse.setText(snapshot.getValue().toString());
                     list.add(snapshot.getValue().toString());
 
                 }
@@ -104,7 +113,7 @@ public class AddData extends AppCompatActivity {
             }
         });
 
-        DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("Kerala");
+        /*DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child("Kerala");
         reference2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -137,7 +146,7 @@ public class AddData extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });
+        });*/
     }
     public void openSignInActivity(View view){
         startActivity(new Intent(AddData.this, MainActivity.class));
